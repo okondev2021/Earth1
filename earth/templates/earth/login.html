@@ -1,0 +1,34 @@
+{% extends 'earth/auth.html' %}
+
+{% block body %}
+    <div id="authcontainer">
+        <div class=" card login shadow shadow-md">
+                <div class="top card-header">
+                    <h1>Login</h1>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'login' %}" method="POST" enctype="multipart/form-data">
+                        {% for message in  messages %}
+                            <div style="width: 100%; margin: 0 auto;border-radius:15px;margin-bottom: 0.7em" class="alert alert-danger alert-dismissible fade show" role="alert"> {{message}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                            </div>
+                        {% endfor %}
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input   class="form-control" type="text" placeholder="Username" name="username"><br>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="Password" name="password">
+                        </div>
+                        <div id="flex" class="form-group">
+                            <a href="#">Forgot Password</a>
+                            <input class="btn" type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
+            <div id="cardfoot" class="card-footer">
+                    <p>Don't have an account? <a href="{% url 'register' %}">Register here.</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

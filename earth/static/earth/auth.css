@@ -1,0 +1,142 @@
+body{
+    background: #121212;
+    color:  rgba(255, 255, 255, 0.87);
+}
+
+
+#authcontainer{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.login{
+    background: #212529;
+    width: 30%;
+    height: 70%;
+}
+
+.login .top{
+    text-align: center;
+    padding: 1.4em 0
+}
+
+.login input{
+    box-shadow: none;
+    outline:none;
+    border: 0.5px solid gray
+}
+
+.login input[type="text"],.login input[type="password"]{
+    height: 60px;
+}
+
+.login #flex{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em
+}
+
+.login input[type="submit"]{
+    background: #121212;
+    border: none;
+    color:  rgba(255, 255, 255, 0.87);
+}
+
+.login #flex a{
+    color: rgba(255, 255, 255, 0.87);
+}
+
+
+.login p {
+    text-align: center;
+    padding-top: 1em
+}
+
+.login p a{
+    color:  rgba(255, 255, 255, 0.87);
+}
+
+@media (max-width:776px){
+    .login{
+        width: 80%
+    }
+}
+
+/* register */
+
+#authcontainer{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
+.register{
+    background: #212529;
+    height: 90%;
+    width: 40%
+}
+
+.register .top{
+    text-align: center;
+    padding: 1.4em 0;
+    text-transform: uppercase
+}
+
+.register input[type="text"], .register input[type="email"], .register input[type="password"]         {
+    box-shadow: none;
+    outline:none;
+    border: 0.5px solid gray;
+    height: 50px
+}
+
+.register .formgroup{
+    display: flex;
+    margin-top: 0.5em;
+}
+
+.register p {
+    text-align: center;
+}
+
+.register p a{
+    color:  rgba(255, 255, 255, 0.87);
+}
+
+.register input[type="submit"]{
+    background: #121212;
+    border: none;
+    color:  rgba(255, 255, 255, 0.87);
+    margin-top: 0.5em
+}
+
+#cardfooter{
+    height: 100px;
+}
+
+#profilepic{
+    margin-top: 0.5
+}
+
+#left{
+    margin-right: 0.5em
+}
+
+#right{
+    margin-left: 0.5em
+}
+
+#form1{
+    margin-top: 0em
+}
+
+@media (max-width:776px){
+    .register{
+        width: 90%
+    }
+}

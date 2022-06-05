@@ -1,0 +1,77 @@
+.donatebody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100% 
+}
+
+#donatematerial{
+    width: 50%;
+}
+
+@media (max-width:780px){
+    #donatematerial{
+        width: 80%
+    }
+}
+
+/* purchase.html */
+
+#purchase #purchaseright .sum{
+    display: flex;justify-content: space-between
+}
+
+#purchase #purchaseright{
+    margin-top: 1rem
+}
+
+#purchase #purchaseleft{
+    background: rgb(233, 233, 233)
+}
+
+#purchase #purchaseright{
+    display: flex;
+    justify-content: center
+}
+
+.summary{
+    width: 80%;
+    padding: 1em;
+    background: rgb(233, 233, 233)
+}
+
+.summary h4{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1.5em
+}
+
+.sum .left, .sum .right{
+    font-size: 0.9rem
+}
+
+.sum .left{
+    opacity: 0.7
+}
+
+.sum .right{
+    font-weight: bolder
+}
+
+.summary form{
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+
+.summary input{
+    width: 80%;
+    background: black;
+    color: white;
+    font-weight: bolder;
+    border: none
+}
+
+

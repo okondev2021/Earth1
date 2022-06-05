@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Earth</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'earth/assets/favicon.ico' %}" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- style -->
+    <link rel="stylesheet" href="{% static 'earth/payment.css' %}">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-4 px-lg-5">
+                    <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'profile' request.user %}">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        <main id="payment">
+                <div id="contain" class=" container">
+                        <p class="h8 ">Payment Details</p> 
+                        {% for message in  messages %}
+                        <div style="width: 100%; margin: 0 auto;border-radius:15px;margin-bottom: 0.7em" class="alert alert-danger alert-dismissible fade show" role="alert"> {{message}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                        </div>
+                        {% endfor %}
+                        <form action="{% url 'payment' userrequest_pay.id %}" method="POST" id="row" class=" m-0 p-0 row gx-3">
+                            {% csrf_token %}
+                            <div class=" m-0 p-0 col-12">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 p-0 mb-1 text">Person Name</p>
+                                    <input type="text" class="form-control mb-3" placeholder="{{request.user.first_name}} {{request.user.last_name}}">
+                                </div>
+                            </div>
+        
+                            <div class="m-0 p-0 pe-2 col-6">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 p-0 mb-1 text">Card Number</p>
+                                    <input type="number" class="form-control mb-3" placeholder="1234 5678 435678">
+                                </div>
+                            </div>
+        
+                            <div class="m-0 p-0 ps-2 col-6">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 p-0 mb-1 text">Amount</p>
+                                    <input type="number" class="form-control mb-3" name="amount" placeholder="Amount">
+                                </div>
+                            </div>
+        
+                            <div  class="m-0 p-0 pe-2 col-6">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 p-0 mb-1 text">Expiry</p>
+                                    <input type="date" class="form-control mb-3">
+                                </div>
+                            </div>
+        
+                            <div class="m-0 p-0 ps-2  col-6">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 p-0 mb-1 text">CVV/CVC</p>
+                                    <input type="password" class="form-control mb-3">
+                                </div>
+                            </div>
+        
+                            <div class="m-0 p-0 col-12">
+                                <div>                               
+                                    <input type="submit" value="Pay">
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

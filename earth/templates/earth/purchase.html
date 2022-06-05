@@ -1,0 +1,39 @@
+{% extends 'earth/earthapplayout.html' %}
+
+{% block body %}
+    <main id="purchase" class=" px-5 py-4">
+        <div class="row">
+            <div id="purchaseright" class="col-sm-6">
+                <div class="summary">
+                    <h4>SUMMARY</h4>
+                    <div class=" mb-3 sum">
+                        <h5 class="left">PRICE</h5>
+                        <h5 class="right">${{purchaseitem.Amount}}</h5>
+                    </div>
+                
+                    <div class=" mb-3 sum">
+                        <h5 class="left">SHIPPING</h5>
+                        <h5 class="right">${{shipping}}</h5>
+                    </div>
+                
+                    <div class=" mb-3 sum">
+                        <h5 class="left">VAT(TAX INCLUDED)</h5>
+                        <h5 class="right">${{VAT}}</h5>
+                    </div>
+                
+                    <div class=" mb-3 sum">
+                        <h5 class="left">GRAND TOTAL</h5>
+                        <h5 class="right">${{Total}}</h5>
+                    </div>
+                    <form action="{% url 'purchase' purchaseitem.id %}" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" value="Pay">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-5">Thanks for getting this far</p>
+
+    </main>
+{% endblock %}

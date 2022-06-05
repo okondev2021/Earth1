@@ -1,0 +1,55 @@
+{% extends 'earth/ecommerce_template.html' %}
+
+{% block body %}
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Shop in style</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Help support others in the community</p>
+            </div>
+        </div>
+    </header>
+    <!-- Section-->
+    <section class="py-3">
+        {% for message in  messages %}
+            <div style="width: 100%; margin: 0 auto;border-radius:15px;margin-bottom: 0.7em" class="alert alert-info alert-dismissible fade show" role="alert"> {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        {% endfor %}
+        <div class="container mt-5">
+            <div class="row ">
+
+                {% for item in items %}
+                    <div id="product-card" class="col-md-3  my-4">
+                        <div class="card">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <img class="card-img-top" src="{{item.ItemImage.url}}" height="200px" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">{{item.Title}}</h5>
+                                    <span class="">${{item.Amount}}.00</span>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto"  href="{% url 'product' item.id %}">See Item</a></div>
+                            </div>
+                        </div>
+                    </div>  
+                {% empty %}
+                   <div style="padding: 0" class="card ">
+                       <div class="card-header">
+                        <h3>No product, Pls come back later</h3>
+                       </div>
+                       <div class="card-body">
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, sapiente similique. Facere voluptatem beatae recusandae corporis sit provident non, suscipit alias impedit? Eum quod fugit sed earum hic deserunt ex.
+                       </div>
+                       <div class="card-footer">
+                           <a class="btn btn-dark" href="{% url 'profile' request.user %}">Go back</a>
+                       </div>
+                   </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

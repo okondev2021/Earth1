@@ -1,0 +1,89 @@
+#payment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+
+#contain{
+    width: 40%;
+    height: 95%;
+    color: black;
+    border-radius: 3px;
+    box-shadow: 1px 1px 10px black;
+    padding: 1em
+}
+
+#row input{
+    width: 100%
+}
+
+#row p{
+    margin: 0
+}
+
+#contain .h8{
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center
+}
+
+#contain .form-control{
+    color: black;
+    border: 0.1px solid rgba(0, 0, 0,0.4);
+    height: 60px;
+    padding-left: 20px;
+    vertical-align: middle;
+    box-shadow: none;
+    border-radius: 0
+}
+
+.text{
+    font-weight: 700
+}
+
+#contain input[type="submit"]{
+    background: black;
+    color: white;
+    border: none;
+    height: 50px;
+    width: 50%;
+    margin-bottom: 2em
+}
+
+
+@media (min-width:700px){
+    #contain{
+        width: 50%;
+        height: 80%
+    }
+    
+}
+
+@media (max-width:681px){
+    #contain{
+        width: 70%;
+        height: 85%
+    }
+    
+}
+
+@media (max-width:450px){
+    #contain{
+        width: 90%;
+        height: 80%;
+    }
+    
+}
+
+@media (max-width:350px){
+    #contain{
+        width: 90%;
+        height: 80%;
+    }
+    
+}

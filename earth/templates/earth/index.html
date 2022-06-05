@@ -1,0 +1,43 @@
+{% extends 'earth/layout1.html' %}
+
+
+{% block script %}
+    <script src="/static/earth/index.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="index" class=" container-fluid">
+        <div class=" row main">
+            <div class=" col-md-7 left_main">
+                <h1 class="hone_best">Lets help you connect and get donations</h1>
+                <p class="p_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, a quisquam amet itaque  optio nihil fuga?</p>
+                <div class="btns">
+                        <button  type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn1" class="btn btn-dark" >Get Started</button>
+                        <a id="btn2" class="btn btn-info" href="tel:08141568457">Call Us</a>
+                </div>
+            </div>
+            <div class=" col-md-5 right_main">
+                <img src="/static/earth/images/illustration-stay-productive.png"  class="img2" width="400px" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 style="color: #121212">INFO</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                There are two types of user 1. Donator 2. Receiver . The donators on this platform see request made by reciver and can choose to donate either materially or financially while receivers make request only one 
+            </div>
+            <div class="modal-footer">
+              <button id="dirinfo" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+{% endblock %}

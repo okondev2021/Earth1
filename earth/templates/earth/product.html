@@ -1,0 +1,22 @@
+{% extends 'earth/ecommerce_template.html' %}
+
+{% block body %}
+    <section class="py-5">
+        <div id="product_container" class="container px-4 px-lg-5 my-lg-5">
+            <div class="row gx-4 gx-lg-5 ">
+                <div id="product_img" class=" col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{item.ItemImage.url}}" height="500px" alt="..." /></div>
+                <div id="product_detail" class="col-md-6">
+                    <h1 class="display-5 fw-bolder">{{item.Title}}</h1>
+                    <div class="fs-5 mb-lg-5 mb-3">
+                        ${{item.Amount}}
+                    </div>
+                    <p class="lead">{{item.Description}}</p>
+                    <div class="d-flex">
+                        <a href="{% url 'purchase' item.id %}"><button class="btn btn-outline-dark flex-shrink-0">Purchase</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
